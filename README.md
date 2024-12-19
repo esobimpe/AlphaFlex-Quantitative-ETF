@@ -64,20 +64,52 @@ By leveraging this holistic methodology, AlphaFlex taps into a balanced mix of h
 
 ---
 
-## 📐 **Portfolio Construction Methodology**
+## 📐 Portfolio Construction Methodology
 
-AlphaFlex is powered by a **quantitative, systematic framework**. Here's a high-level overview of how we build our portfolio:
-1. **Screening Rules**:
-   - High Earnings & Sales Growth.
-   - Consistent Growth with Bullish Trends.
-   - Valuation Metrics for Buy-and-Hold Value.
-   - CANSLIM Integration.
-2. **Optimization Models**:
-   - Risk-adjusted weighting via Sharpe ratio, mean-variance models.
-   - Beta constraints to track market performance with lower volatility.
-3. **Backtesting**:
-   - Historical performance tested against major indices (S&P 500).
-   - Metrics include Alpha, Beta, Sharpe Ratio, and Value-at-Risk (VaR).
+The **AlphaFlex Quantitative Growth ETF (AFG)** is built upon a systematic, data-driven approach to construct a diversified portfolio of high-growth stocks. The portfolio construction methodology leverages various factors including market cap, revenue, volatility, and technical indicators to assign weights to each stock. Below is a detailed explanation of the steps involved in portfolio construction:
+
+### 1. **Stock Selection and Screening**
+   - **Country Filter**: The ETF exclusively includes stocks from the United States to ensure regulatory consistency and market familiarity.
+   - **Stock Screening**: The stocks are selected based on various quantitative factors, including:
+     - High Earnings Growth
+     - High Sales Growth
+     - Consistent Growth on a Bullish Trend
+     - CANSLIM principles (Growth, Momentum, Operational Excellence)
+
+### 2. **Weight Assignment**
+   Once stocks are selected for inclusion in the ETF, different methodologies are used to assign a weight to each stock in the portfolio. These weightings are designed to balance between growth potential, risk, and diversification. The weight assignment methods include:
+
+   - **Market Cap Weighting**: Stocks are weighted based on their market capitalization. Larger companies generally receive a larger weight, reflecting their established presence in the market. The market cap weight for each stock is calculated as:
+     ```plaintext
+     Market Cap Weight = Stock Market Cap / Total Market Cap of Portfolio
+     ```
+
+   - **Equal Weighting**: Each stock receives an equal weight in the portfolio, ensuring a broad diversification across all included stocks. The equal weight for each stock is calculated as:
+     ```plaintext
+     Equal Weight = 1 / Total Number of Stocks
+     ```
+
+   - **Fundamental Weighting (Revenue-based)**: Stocks are weighted according to their total revenue, prioritizing companies with higher revenue, which often correlates with stability and growth potential. The weight for each stock based on revenue is:
+     ```plaintext
+     Fundamental Weight = Stock Revenue / Total Revenue of Portfolio
+     ```
+
+   - **Volatility Weighting (Inverse of Volatility)**: To minimize risk, stocks with lower price volatility are given higher weights. This method emphasizes stability by allocating more to stocks with less price fluctuation. The volatility weight for each stock is:
+     ```plaintext
+     Volatility Weight = (1 / Volatility) / Σ (1 / Volatility of All Stocks)
+     ```
+     where **Volatility** is calculated as the standard deviation of the stock’s daily closing price over the past year.
+
+   - **Log-Scaled Market Cap Weighting**: For scaling purposes and to avoid disproportionate influence from extremely large companies, the market cap is log-transformed before weighting. This method reduces the impact of exceptionally large companies without excluding them from the portfolio:
+     ```plaintext
+     Log Market Cap Weight = log(Market Cap + 1) / Σ log(Market Cap of All Stocks + 1)
+     ```
+
+### 3. **Final Weight Adjustment**
+   After calculating individual weights using the above methods, the final weight for each stock is determined by adjusting and combining the different weightings to achieve a balanced portfolio. The adjusted weight for each stock is computed as a weighted average of the different weight categories:
+   ```plaintext
+   Adjusted Weight = 0.3 × Log Market Cap Weight + 0.15 × Equal Weight + 0.15 × Volatility Weight + 0.4 × Fundamental Weight
+
 
 ---
 
