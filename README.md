@@ -10,6 +10,9 @@
 ---
 
 > **Achieve consistent market outperformance with AlphaFlex Quantitative Growth ETF—a fusion of advanced quantitative models and institutional-grade investment strategies.**
+>
+> **Portfolio Manager: Eniola A.**
+Eniola A. is the builder of AlphaFlex, with a passion for developing innovative strategies and applying advanced quantitative models to achieve consistent outperformance in the market.
 
 ---
 
