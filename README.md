@@ -8,8 +8,6 @@
 
 > **Disclaimer**: This is a fun project aimed at exploring the concept of an ETF that automatically adjusts itself in response to market movements, with the goal of reducing risk and increasing returns. The project leverages advanced quantitative models and strategies, but it is not intended as financial or investment advice. The performance of this ETF is for educational and research purposes only, and any investments based on this project should be made with caution and after thorough research.
 
-Eniola A. is the builder of AlphaFlex, with a passion for developing innovative strategies and applying advanced quantitative models to achieve consistent outperformance in the market.
-
 ---
 
 ## 🎯 **Table of Contents**
