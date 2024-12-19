@@ -109,9 +109,8 @@ The **AlphaFlex Quantitative Growth ETF (AFG)** is built upon a systematic, data
    After calculating individual weights using the above methods, the final weight for each stock is determined by adjusting and combining the different weightings to achieve a balanced portfolio. The adjusted weight for each stock is computed as a weighted average of the different weight categories:
    ```plaintext
    Adjusted Weight = 0.3 × Log Market Cap Weight + 0.15 × Equal Weight + 0.15 × Volatility Weight + 0.4 × Fundamental Weight
-
-
 ---
+
 
 ## 📊 **Performance Metrics**
 
