@@ -6,7 +6,7 @@
 
 ---
 
-> **Disclaimer**: This is a fun project aimed at exploring the concept of an ETF that automatically adjusts itself in response to market movements, with the goal of reducing risk and increasing returns. The project leverages advanced quantitative models and strategies, but it is not intended as financial or investment advice. The performance of this ETF is for educational and research purposes only, and any investments based on this project should be made with caution and after thorough research.
+> **Disclaimer**: This is a fun project aimed at exploring the concept of an ETF that automatically adjusts itself every week in response to market movements, with the goal of reducing risk and increasing returns. The project leverages advanced quantitative models and strategies, but it is not intended as financial or investment advice. The performance of this ETF is for educational and research purposes only, and any investments based on this project should be made with caution and after thorough research.
 
 ---
 
