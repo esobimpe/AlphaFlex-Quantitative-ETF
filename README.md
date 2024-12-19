@@ -112,8 +112,7 @@ AlphaFlex is more than an ETF—it's a comprehensive investment solution designe
 Clone this repository to access the full AlphaFlex toolkit, including scripts for backtesting, optimization, and analysis.
 
 ```bash
-git clone https://github.com/esobimpe/AlphaFlex-Quantitative-ETF
-.git
+git clone https://github.com/esobimpe/AlphaFlex-Quantitative-ETF.git
 cd alphaflex-etf
 
 
