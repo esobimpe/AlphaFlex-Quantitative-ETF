@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .charts-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            width: 45%;
+        }
+        .table-container {
+            max-height: 900px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            min-width: 100px;
+        }
+        table th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .etf-info {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .etf-info h2 {
+            color: #000;
+            font-size: 2em;
+        }
+        .etf-info p, .etf-info ul {
+            color: #000;
+            font-size: 1em;
+        }
+        .etf-info ul {
+            padding-left: 20px;
+        }
+        .etf-info .icon {
+            font-size: 1.5em;
+            color: #2980b9;
+        }
+        .accordion {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            width: 100%;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .accordion:hover {
+            background-color: #bdc3c7;
+        }
+        .accordion-content {
+            display: none;
+            padding-left: 20px;
+            font-size: 1em;
+            color: #000;
+        }
+        .active .accordion-content {
+            display: block;
+        }
+        .active .accordion {
+            background-color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <!-- AlphaFlex ETF Info Section -->
+    <div class="etf-info">
+        <h2>AlphaFlex Quantitative Growth ETF (AFG)</h2>
+        <p><strong>ETF Type:</strong> Growth</p>
+        <p><span class="icon">🚀</span> <strong>Overview:</strong> The AlphaFlex Quantitative Growth ETF (AFG) is a next-generation exchange-traded fund designed to capitalize on high-growth opportunities while minimizing risks. By leveraging a unique blend of fundamental analysis, technical indicators, and quantitative optimization, AFG empowers investors to achieve sustainable market-beating returns.</p>
+
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is a fun project aimed at exploring the concept of an ETF that automatically adjusts itself every week in response to market movements, with the goal of reducing risk and increasing returns. The project leverages advanced quantitative models and strategies, but it is not intended as financial or investment advice. The performance of this ETF is for educational and research purposes only, and any investments based on this project should be made with caution and after thorough research.</p>
+        </div>
+
+        <h3>Key Objectives:</h3>
+        <ul>
+            <li><strong>📈 Sustainable Growth:</strong> Identify high-growth companies with robust earnings and sales metrics.</li>
+            <li><strong>🛡️ Risk Management:</strong> Minimize volatility and drawdowns through disciplined portfolio construction.</li>
+            <li><strong>🌍 Diversification:</strong> Achieve balanced exposure across sectors and industries for consistent performance.</li>
+        </ul>
+        
+        <h3>Core Features:</h3>
+        <button class="accordion">1. High Earnings Growth</button>
+        <div class="accordion-content">
+            <p>The High Earnings Growth approach emphasizes identifying companies with consistently robust earnings growth over multiple periods. This method seeks out businesses that demonstrate operational efficiency, strong demand for their products or services, and competitive advantages that enable them to scale profitably. Companies meeting these criteria are often market leaders with clear visibility into their future growth trajectories, making them ideal candidates for inclusion in the AlphaFlex portfolio.
+
+                By prioritizing sustained profitability, this screening method ensures the ETF captures firms that can consistently reinvest in innovation and expansion, driving long-term shareholder value. Such businesses typically outperform their peers, not only in bull markets but also during periods of economic uncertainty, due to their resilient financial structures and clear strategic visions.</p>
+        </div>
+
+        <button class="accordion">2. High Sales Growth</button>
+        <div class="accordion-content">
+            <p>High Sales Growth focuses on companies that exhibit significant revenue expansion alongside financial prudence. This approach identifies firms with the ability to scale operations, capture market share, and maintain fiscal discipline, as evidenced by healthy balance sheets and high returns on equity. The methodology also accounts for management quality and their ability to sustain this growth while managing external risks effectively.
+
+                This screening process highlights companies that are often innovators or disruptors in their respective industries. By capturing firms with consistent top-line growth, the ETF ensures exposure to businesses with strong underlying demand dynamics, providing a critical foundation for future earnings potential and long-term investment success.</p>
+        </div>
+
+        <button class="accordion">3. Consistent Growth on a Bullish Trend</button>
+        <div class="accordion-content">
+            <p>The Consistent Growth on a Bullish Trend method leverages both fundamental and technical metrics to identify stocks with a proven track record of earnings expansion and positive market momentum. This dual-focus strategy emphasizes companies that not only deliver strong financial performance but also exhibit a robust upward price trajectory, signaling sustained investor confidence. By blending these factors, the ETF ensures a balanced selection of resilient, well-managed firms that thrive across market cycles.
+
+                This method's emphasis on consistency is particularly crucial for mitigating portfolio volatility. Stocks identified through this approach tend to outperform due to their ability to attract long-term institutional investors, reinforcing their price stability. The ETF benefits from aligning with such companies, which have both the operational excellence and market perception to deliver steady growth.</p>
+        </div>
+
+        <button class="accordion">4. CANSLIM</button>
+        <div class="accordion-content">
+            <p>Inspired by William O’Neil’s investment framework, the CANSLIM method combines growth, momentum, and operational excellence. This approach identifies companies with a blend of earnings and sales growth, positive market sentiment, and strong technical performance. It also considers management quality and broader industry trends to ensure a comprehensive assessment of each stock's potential.
+
+                By leveraging this holistic methodology, AlphaFlex taps into a balanced mix of high-growth opportunities and momentum-driven performance. CANSLIM is particularly effective in capturing stocks that are at the forefront of innovation and market leadership, providing the ETF with exposure to businesses that are well-positioned to benefit from both macroeconomic trends and company-specific drivers.</p>
+        </div>
+
+        <h3>Portfolio Construction Methodology:</h3>
+        <p>The portfolio is constructed using a data-driven, systematic approach that leverages various factors including market cap, revenue, volatility, and technical indicators to assign weights to each stock.</p>
+        <!-- You can expand this further if necessary -->
+    </div>
+
+    <div class="charts-container">
+        <!-- Sector Allocation Chart -->
+        <div class="chart-container">
+            <h2>Sector Allocation</h2>
+            <canvas id="sectorAllocationChart"></canvas>
+        </div>
+
+        <!-- Total Returns Chart -->
+        <div class="chart-container">
+            <h2>Total Returns</h2>
+            <p><strong>Note:</strong> The Total Returns bar chart shows how a $10,000 investment in each stock would have performed over different periods (1 day, 5 days, 1 month, 3 months, 6 months, 1 year, 2 years, and 5 years).</p>
+            <canvas id="totalReturnsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h2>Portfolio Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Name</th>
+                    <th>Sector</th>
+                    <th>Market Cap</th>
+                    <th>Revenue</th>
+                    <th>Volatility</th>
+                    <th>Weight (%)</th>
+                    <th>Initial Value</th>
+                    <th>1d Value</th>
+                    <th>5d Value</th>
+                    <th>1mo Value</th>
+                    <th>3mo Value</th>
+                    <th>6mo Value</th>
+                    <th>1y Value</th>
+                    <th>2y Value</th>
+                    <th>5y Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                <tr>
+                    <td>{{ row['Ticker'] }}</td>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['Sector'] }}</td>
+                    <td>{{ row['Market Cap'] }}</td>
+                    <td>{{ row['Revenue'] }}</td>
+                    <td>{{ row['Volatility'] }}</td>
+                    <td>{{ row['Weights'] }}</td>
+                    <td>{{ row['Initial Value'] }}</td>
+                    <td>{{ row['1d Value'] }}</td>
+                    <td>{{ row['5d Value'] }}</td>
+                    <td>{{ row['1mo Value'] }}</td>
+                    <td>{{ row['3mo Value'] }}</td>
+                    <td>{{ row['6mo Value'] }}</td>
+                    <td>{{ row['1y Value'] }}</td>
+                    <td>{{ row['2y Value'] }}</td>
+                    <td>{{ row['5y Value'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+        acc.addEventListener('click', () => {
+            acc.classList.toggle('active');
+            const content = acc.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+
+    // Ensure data is correctly passed to the frontend
+    const sectorAllocationData = {{ sector_allocation | tojson }};
+    const totalReturnsData = {{ total_returns | tojson }};
+
+    // Sector Allocation Chart
+    const sectorAllocationCtx = document.getElementById('sectorAllocationChart').getContext('2d');
+    new Chart(sectorAllocationCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(sectorAllocationData),
+            datasets: [{
+                label: 'Weight (%)',
+                data: Object.values(sectorAllocationData),
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Total Returns Chart
+    const totalReturnsCtx = document.getElementById('totalReturnsChart').getContext('2d');
+    new Chart(totalReturnsCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(totalReturnsData),
+            datasets: [{
+                label: 'Total Returns',
+                data: Object.values(totalReturnsData),
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
