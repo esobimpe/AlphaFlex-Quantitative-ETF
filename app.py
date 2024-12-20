@@ -14,6 +14,8 @@ def calculate_sector_allocation(df):
 
 # Main function to fetch stock data and calculate weights
 def get_stock_data():
+
+    #Stocks are manually entered in the meantime. The code will be updated to automatically fetch stocks that meet our features in few weeks
     stock_tickers = [
         "WGS", "APP", "CRDO", "GRND", "TKO", "ALKT", "ATAT", "YMM", "SOFI", "GLBE", 
         "AMBA", "RELY", "AXON", "MPWR", "NBIX", "NOW", "NVDA", "SHOP", "NFLX", 
