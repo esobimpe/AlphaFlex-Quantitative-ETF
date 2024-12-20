@@ -4,7 +4,10 @@
 [![Alpha Performance](https://img.shields.io/badge/Alpha-10%25%2B-blue.svg)](https://github.com/AlphaFlexETF/Performance)
 [![ETF Type: Growth](https://img.shields.io/badge/ETF%20Type-Growth-yellow.svg)](https://github.com/AlphaFlexETF/Details)
 
-Link: https://c7e5-136-227-234-163.ngrok-free.app/
+**Link: https://c7e5-136-227-234-163.ngrok-free.app/**
+
+(website is slow and will take a minute to run)
+
 ---
 
 > **Disclaimer**: This is a fun project aimed at exploring the concept of an ETF that automatically adjusts itself every week in response to market movements, with the goal of reducing risk and increasing returns. The project leverages advanced quantitative models and strategies, but it is not intended as financial or investment advice. The performance of this ETF is for educational and research purposes only, and any investments based on this project should be made with caution and after thorough research.
