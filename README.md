@@ -6,7 +6,7 @@
 
 **Link: https://c7e5-136-227-234-163.ngrok-free.app/**
 
-(website is slow and will take a minute to run)
+(website is slow and might take a minute to run)
 
 ---
 
