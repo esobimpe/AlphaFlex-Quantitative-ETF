@@ -12,7 +12,7 @@ def calculate_sector_allocation(df):
     sector_allocation = df.groupby('Sector')['Weights'].sum()
     return sector_allocation.sort_values(ascending=False)
 
-# Main function to fetch stock data and calculate weights
+# Main function to fetch stock data and calculate weights - the tickers below have been automated but not yet public.
 def get_stock_data():
     stock_tickers = [
     "WGS", "APP", "CRDO", "RSI", "TARS", "GRND", "JEF", "TSM", "TKO", "VIK", 
