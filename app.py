@@ -14,14 +14,14 @@ def calculate_sector_allocation(df):
 
 # Main function to fetch stock data and calculate weights
 def get_stock_data():
-
-    #Stocks are manually entered in the meantime. The code will be updated to automatically fetch stocks that meet our features in few weeks
     stock_tickers = [
-        "WGS", "APP", "CRDO", "GRND", "TKO", "ALKT", "ATAT", "YMM", "SOFI", "GLBE", 
-        "AMBA", "RELY", "AXON", "MPWR", "NBIX", "NOW", "NVDA", "SHOP", "NFLX", 
-        "SHC", "ADMA", "CDXC", "CLSK", "DOCS", "FOLD", "FUTU", "MNKD", "ORC", 
-        "QUBT", "RERE", "SCPX", "SMCI", "TALK", "VXRT"
-    ]
+    "WGS", "APP", "CRDO", "RSI", "TARS", "GRND", "JEF", "TSM", "TKO", "VIK", 
+    "YMM", "ALKT", "ATAT", "SOFI", "SRAD", "DUOL", "GLBE", "AFRM", "AMBA", "RELY", 
+    "INSP", "AXON", "MPWR", "NBIX", "NOW", "NVDA", "SHOP", "NFLX", "TGLS", "DXPE", 
+    "RL", "SHC", "INOD", "ADMA", "ARVN", "CAMT", "CDXC", "CLSK", "DDL", "DOCS", "FLYW", 
+    "FOLD", "FUTU", "GCT", "MNKD", "ORC", "PAY", "QUBT", "RERE", "SCPX", "SMCI", "TALK", 
+    "VITL", "VXRT", "WISA"
+]
 
     data = []
     for ticker in stock_tickers:
@@ -97,23 +97,27 @@ def consolidated_portfolio_values_with_totals(stock_weights, initial_investment=
 
     value_data['Initial Value'] = (stock_weights['Final Adjusted Weight %'] / 100) * initial_investment
     final_df = pd.DataFrame(value_data)
-    total_row = {
-        'Ticker': 'TOTAL',
-        'Name': '',
-        'Weights': final_df['Weights'].sum(),
-        'Initial Value': final_df['Initial Value'].sum()
-    }
-    for label in periods.keys():
-        total_row[f'{label} Value'] = final_df[f'{label} Value'].sum()
-    final_df = pd.concat([final_df, pd.DataFrame([total_row])], ignore_index=True)
+
+    # Save the result to CSV
+    final_df.to_csv('final_file.csv', index=False)
+
     return final_df
 
 @app.route('/')
 def index():
-    stock_weights = get_stock_data()
-    consolidated_df = consolidated_portfolio_values_with_totals(stock_weights)
+    # Load the pre-saved CSV file if it exists
+    if os.path.exists('final_file.csv'):
+        consolidated_df = pd.read_csv('final_file.csv')
+    else:
+        stock_weights = get_stock_data()
+        consolidated_df = consolidated_portfolio_values_with_totals(stock_weights)
+    
     sector_allocation = calculate_sector_allocation(consolidated_df)
-    total_returns = consolidated_df.iloc[-1, -8:-1].to_dict()  # Total returns for 1d to 5y
+    
+    # Calculate the sum of returns (1d, 5d, 1mo, etc.)
+    total_returns = {}
+    for label in ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y"]:
+        total_returns[label] = consolidated_df[f'{label} Value'].sum()
 
     return render_template(
         'index.html',
@@ -123,4 +127,4 @@ def index():
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=6000)
