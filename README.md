@@ -145,11 +145,30 @@ AlphaFlex is more than an ETF—it's a comprehensive investment solution designe
 
 ## 🛠️ **Installation & Usage**
 
-Clone this repository to access the full AlphaFlex toolkit, including scripts for backtesting, optimization, and analysis.
+Access the Full AlphaFlex Toolkit
+Unlock the complete AlphaFlex toolkit, which includes powerful scripts for portfolio backtesting, optimization, and performance analysis.
+
+While the stock-picking algorithms behind AlphaFlex are proprietary, you can still access their results via the APIs provided below.
+
+Installation
+To install AlphaFlex directly, use the following command:
 
 ```bash
-git clone https://github.com/esobimpe/AlphaFlex-Quantitative-ETF.git
-cd alphaflex-etf
+!pip install git+https://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@github.com/esobimpe/AlphaFlex-Growth-Portfolio.git
+```
+
+Usage 
+
+```bash
+from alpha_flex import get_portfolio, backtest_portfolio
+
+# Get portfolio data
+portfolio_df = get_portfolio() 
+portfolio_df
+
+#Get Portfolio Performance over different periods - 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y
+result = backtest_portfolio(investment_amount, period='6mo')
+result
 
 
 
