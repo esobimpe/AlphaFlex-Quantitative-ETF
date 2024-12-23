@@ -145,7 +145,6 @@ AlphaFlex is more than an ETF—it's a comprehensive investment solution designe
 
 ## 🛠️ **Installation & Usage**
 
-Access the Full AlphaFlex Toolkit
 Unlock the complete AlphaFlex toolkit, which includes powerful scripts for portfolio backtesting, optimization, and performance analysis.
 
 While the stock-picking algorithms behind AlphaFlex are proprietary, you can still access their results via the APIs provided below.
