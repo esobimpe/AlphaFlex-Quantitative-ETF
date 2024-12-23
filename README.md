@@ -153,7 +153,7 @@ Installation
 To install AlphaFlex directly, use the following command:
 
 ```bash
-!pip install git+https://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@github.com/esobimpe/AlphaFlex-Growth-Portfolio.git
+!pip install git+https://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@github.com/esobimpe/AlphaFlex-Growth-Portfolio.git
 ```
 
 Usage 
